@@ -9,60 +9,6 @@ Original file is located at
 ## **Final Code for product recommendation**
 """
 
-# Code to read csv file into colaboratory:
-!pip install -U -q PyDrive
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-from google.colab import auth
-from oauth2client.client import GoogleCredentials
-
-auth.authenticate_user()
-gauth = GoogleAuth()
-gauth.credentials = GoogleCredentials.get_application_default()
-drive = GoogleDrive(gauth)
-
-downloaded = drive.CreateFile({'id':'17mly50Hi_6TQkxPvrCEfGY11_zf0t7jy'}) 
-downloaded.GetContentFile('top10_products.pkl') 
-
-downloaded = drive.CreateFile({'id':'1RvQcY4rFhtVgWkPcVAlqNPESouDfbFNQ'}) 
-downloaded.GetContentFile('user_last_purchase.pkl') 
-
-downloaded = drive.CreateFile({'id':'1zc1KeGkL70pXJi60l4D4Z9rIn1KP3gLy'}) 
-downloaded.GetContentFile('day_reorder_rate.pkl') 
-
-downloaded = drive.CreateFile({'id':'1m4EupTP1ynqEZPr6yoQQzCEcvwP4J4F9'}) 
-downloaded.GetContentFile('p_days_since_prior_order_reorder_rate.pkl') 
-
-downloaded = drive.CreateFile({'id':'1sD2C16knsFhQSEwywi2xWBkw642bcVOf'}) 
-downloaded.GetContentFile('u_days_since_prior_order_reorder_rate.pkl') 
-
-downloaded = drive.CreateFile({'id':'1gLRTtO_AeQ6B6gacjS5gGeLl-Dbit5nI'}) 
-downloaded.GetContentFile('days_since_prior_reorder_rate.pkl') 
-
-downloaded = drive.CreateFile({'id':'1sKYaYlHyGI35-vfBh9UjjSjYoM8eW2th'}) 
-downloaded.GetContentFile('catboost_v3.pkl') 
-
-downloaded = drive.CreateFile({'id':'1E-eAR92nV5dq27UhglfUcoIjug2YPsf8'}) 
-downloaded.GetContentFile('product_features_v6.pkl') 
-
-downloaded = drive.CreateFile({'id':'1SS2SGQshSQcXK2TeWzKj-K58cLCPvd17'}) 
-downloaded.GetContentFile('user_features_v6.pkl') 
-
-downloaded = drive.CreateFile({'id':'1T-RTnqaO5ICwSuHB1WDQcB_7WEIzbZHs'}) 
-downloaded.GetContentFile('merged_user_product_features.pkl') 
-
-downloaded = drive.CreateFile({'id':'1-fYKH5QvOcuiJ8IOd71eY43qNSKbuqSV'}) 
-downloaded.GetContentFile('f1optimization_faron.py')
-
-downloaded = drive.CreateFile({'id':'14aBOKGIZVwWBoWM43JZiW5tRaXz97zK6'}) 
-downloaded.GetContentFile('hour_reorder_rate.pkl')
-
-downloaded = drive.CreateFile({'id':'1fRFHq4fh-ClyrcKOctYJcc7EENRgn8Pa'}) 
-downloaded.GetContentFile('product_mappings.pkl')
-
-downloaded = drive.CreateFile({'id':'1JKqY3mqBKo7q7l3GtU8mo82ceNesQIPM'}) 
-downloaded.GetContentFile('Data_v2.h5')
-
 #loading libraries
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
