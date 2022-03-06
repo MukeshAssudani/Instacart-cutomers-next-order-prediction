@@ -292,4 +292,4 @@ print("="*20)
 for _,value in recommended_products[0]['recommend'].items():
     print(value)
 
-pickle.dump(regressor, open('catboost_v3.pkl','wb'))
+
