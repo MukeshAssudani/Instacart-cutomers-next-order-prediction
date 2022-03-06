@@ -221,6 +221,8 @@ def final(X = None):
     difference = end_time - start_time
     #print("Total Time : {} seconds".format(difference))
     time = "{}".format(difference)
+    
+    pickle.dump(catboost, open('catboost_v3.pkl','wb'))
 
     # del featurized_data, products_x
     return predictions, time
