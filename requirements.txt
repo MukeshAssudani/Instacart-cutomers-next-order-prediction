@@ -5,5 +5,4 @@ joblib
 matplotlib
 numpy
 pandas
-pickle
 sklearn
