@@ -16,7 +16,7 @@ import pickle
 
 import flask
 app = Flask(__name__)
-model= pickle.load(open('catboost_v3.pkl','rb'))
+model= pickle.load(open('catboostmodel.pkl','rb'))
 # render_template
 
 @app.route('/')
