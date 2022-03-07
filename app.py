@@ -23,8 +23,8 @@ model= pickle.load(open('catboost_v3.pkl','rb'))
 def home():
 
     """Serve homepage template."""
-    return flask.render_template('index.html')
-    #return flask.render_template('index.html')
+    return render_template('index.html')
+    
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -34,8 +34,8 @@ def predict():
     predictions, time = get_recommendations(to_predict_list)
     print(predictions, time)
     if 'recommend' not in predictions.keys():
-        #return flask.redirect('new_user_recommendation.html',predictions = predictions)
-        return flask.render_template("new_user_recommendation.html",predictions = predictions)
+        
+        return render_template("new_user_recommendation.html",predictions = predictions)
 
-    return flask.render_template("predict.html",predictions = predictions)
+    return render_template("predict.html",predictions = predictions)
     #return jsonify({'products': recommended_products, 'Time': difference, 'predict_list':to_predict_list, 'top5':top5_products})
