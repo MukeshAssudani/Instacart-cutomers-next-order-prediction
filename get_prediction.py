@@ -154,3 +154,11 @@ def get_recommendations(X = None):
 
     del featurized_data, products_x
     return predictions, time
+
+
+# Saving model to disk
+pickle.dump(c_model, open('catboostmodel.pkl','wb'))
+
+# Loading model to compare the results
+model = pickle.load(open('catboostmodel.pkl','rb'))
+print(model.predict([[recommended_products,difference,to_predict_list]]))
