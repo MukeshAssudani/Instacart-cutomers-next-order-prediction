@@ -39,8 +39,3 @@ def predict():
 
     return flask.render_template("predict.html",predictions = predictions)
     #return jsonify({'products': recommended_products, 'Time': difference, 'predict_list':to_predict_list, 'top5':top5_products})
-
-
-if __name__ == '__main__':
-    #app.debug = True
-    app.run(debug=True, host='0.0.0.0', port=9696)
