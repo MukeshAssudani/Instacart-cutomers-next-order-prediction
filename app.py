@@ -9,7 +9,7 @@ Original file is located at
 
 #loading libraries
 import joblib
-from flask import Flask, request
+from flask import Flask, request, jsonify, render_template
 from get_prediction import get_recommendations
 import pickle
 
