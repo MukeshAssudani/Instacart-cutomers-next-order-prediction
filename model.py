@@ -264,8 +264,8 @@ def globl_threshold_products(model = None, scaler = None, model_type = 'xgb', va
     predict_y = predict_y[:,-1]
     
     # Saving model to disk
-pickle.dump(c_model, open('catboostmodel.pkl','wb'))
+pickle.dump(c_model, open('catboost_v3.pkl','wb'))
 
 # Loading model to compare the results
-model = pickle.load(open('catboostmodel.pkl','rb'))
+model = pickle.load(open('catboost_v3.pkl','rb'))
 print(model.predict([[recommended_products,difference,to_predict_list]]))
